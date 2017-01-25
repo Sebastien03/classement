@@ -1,46 +1,47 @@
 <!DOCTYPE html>
-<html lang="fr">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no">
-<link rel="stylesheet" type="text/css" href="CSS/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="styleCorrection.css">
-<link rel="stylesheet" type="text/css" href="styleCorrection.css">
+<html>
 <head>
-    <title>Vinscene</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="styleCorrection.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+	<title>Vin'Scène</title>
 </head>
-<body>
-    <div class="container">
-        <div class="row">
-        <form class="navbar-form" name="formulmaireRecherche" onsubmit="clique(); return false;">
-              <input type="texte" name="recherche" class="form-control">
+<body class="container">
 
-             <input type="radio" name="choixdutype" value="classement" class="radio-inline" checked>
-              <label>Classement</label>
-              <input type="radio" name="choixdutype" value="dossard" class="radio-inline">
-              <label>Dossard</label>
-              <input type="radio" name="choixdutype" value="nom" class="radio-inline">
-              <label>Nom</label>
-               <input type="radio" name="choixdutype" value="prenom" class="radio-inline">
-              <label> Prenom</label>
-              <button type="submit" class="btn btn-default">
-              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>recherche</button>
-        </form>
+		<div class="row">
+			<form onSubmit="search();return false;" name="formu" class="navbar-form">
+				<input type="text" name="rech" class="form-control">
+				<input type="radio" name="choixType" value="nom" class="radio-inline" checked>
+					<label>NOM</label>
+				<input type="radio" name="choixType" value="prenom" class="radio-inline" checked>
+					<label>prénom</label>	
+				<input type="radio" name="choixType" value="classement" class="radio-inline" checked>
+					<label>classement</label>
+				<input type="radio" name="choixType" value="dossard" class="radio-inline" checked>
+					<label>dossard</label>
+				<button type="submit" name="recherchek" value="recherche" class="btn btn-default" >
+				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>Recherche</button>
+			</form>
 
-        	<button type="submit" onclick="tri_dossard(2); return false;"
-        	> Trier par dossard</button>
-        	<button type="submit" onclick="tri_dossard(0); return false;"
-        	> Trie par classement</button>
-        	<button type="submit" onclick="tri_dossard(1); return false;"
-        	> Trier par ordre alphabetique</button>
-        	
-            <table class="table table-bordered col-md-12">        
-                <thead>
-                </thead>
-                <tbody id="classement">
-                </tbody>          
-            </table>
-        </div>
-    </div>    
-    <script type="text/javascript" src="javascriptCorrection.js" ></script>
+			<table class="table table-bordered col-md-12 ">
+
+				<thead>
+				<tr>
+					<th><button type="button" onclick="tri(0)">classement</button></th>
+					<th><button type="button"onclick="tri(1)">NOM</button><button type="button" onclick="tri_prenom()">Prenom</button></th>
+					<th><button type="button" onclick="tri(2)">dossard</button></th>
+				</tr>	
+				</thead>
+
+				<tbody id="classmt">
+
+				</tbody>
+				
+			</table>
+			
+		</div>
+	<script type="text/javascript" src="javascriptCorrection.js"></script>
 </body>
 </html>
