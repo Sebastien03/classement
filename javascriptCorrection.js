@@ -162,3 +162,33 @@ function search(recherche, tableau=tab, type=2){
     }
 
 afficheruntableau(tab);
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
+ function tri_dossard(type){
+
+	var tableau = new Array;
+	tableau = tableau.concat(tab);
+	var resultat = new Array;
+	var minimum;
+	var indice;
+	var ligneMinimum;
+
+	while(tableau.length!=0){
+		minimum=tableau[0][type];
+		for (var i=0; i<tableau.length;i++){
+			if(tableau[i][type] <= minimum){
+				minimum= tableau[i][type];
+				ligneMinimum= tableau[i];
+				indice = i;
+			}
+		}
+		resultat.push(ligneMinimum);
+		tableau.splice(indice,1);
+	}
+	afficheruntableau(resultat);
+} 
+
+afficheruntableau(tab);

@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="CSS/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="styleCorrection.css">
+<link rel="stylesheet" type="text/css" href="styleCorrection.css">
 <head>
     <title>Vinscene</title>
 </head>
@@ -24,6 +25,14 @@
               <button type="submit" class="btn btn-default">
               <span class="glyphicon glyphicon-search" aria-hidden="true"></span>recherche</button>
         </form>
+
+        	<button type="submit" onclick="tri_dossard(2); return false;"
+        	> Trier par dossard</button>
+        	<button type="submit" onclick="tri_dossard(0); return false;"
+        	> Trie par classement</button>
+        	<button type="submit" onclick="tri_dossard(1); return false;"
+        	> Trier par ordre alphabetique</button>
+        	
             <table class="table table-bordered col-md-12">        
                 <thead>
                 </thead>
